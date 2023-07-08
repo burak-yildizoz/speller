@@ -33,8 +33,8 @@ try {
         std::cin >> search_str;
 
         // Obtain matches
-        static const std::string non_whitespace_regex_str = R"(\S*)";
-        const std::regex rgx(non_whitespace_regex_str + search_str + non_whitespace_regex_str);
+        static const std::string match_word_str = util::non_whitespace_or_space_regex_str + "*";
+        const std::regex rgx(match_word_str + search_str + match_word_str);
         const std::vector<std::string> results = util::get_all_matches(speller, rgx);
 
         // Print matches

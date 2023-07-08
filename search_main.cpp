@@ -35,8 +35,8 @@ try {
         // Create regex from search string
         static const std::regex asterisk_rgx(R"(\*)");
         static const std::regex question_rgx(R"(\?)");
-        std::string regex_str = std::regex_replace(search_str, asterisk_rgx, R"(\S+)");
-        regex_str = std::regex_replace(regex_str, question_rgx, R"(\S)");
+        std::string regex_str = std::regex_replace(search_str, asterisk_rgx, util::non_whitespace_or_space_regex_str + "+");
+        regex_str = std::regex_replace(regex_str, question_rgx, util::non_whitespace_or_space_regex_str);
         regex_str = "^" + regex_str + "$";
 
         // Obtain matches

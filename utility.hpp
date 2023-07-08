@@ -18,6 +18,9 @@ std::string file_to_string(const std::filesystem::path& filename);
 
 std::vector<std::string> get_all_matches(const std::string& str, const std::regex& rgx);
 
+/// Equal to regex `\S` except space character
+const std::string non_whitespace_or_space_regex_str = R"([^\r\n\t\f\v])";
+
 } // namespace util
 
 ////////////////////////////////////////////////////////////////////////////////
