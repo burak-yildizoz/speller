@@ -8,3 +8,6 @@ target_include_directories(speller_utility_library INTERFACE ${CMAKE_CURRENT_SOU
 
 add_executable(speller_regex "regex_main.cpp")
 target_link_libraries(speller_regex speller_utility_library)
+
+add_executable(speller_search "search_main.cpp")
+target_link_libraries(speller_search speller_utility_library)
