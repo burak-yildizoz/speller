@@ -41,6 +41,10 @@ The following characters are specially treated.
 Example usage:
 
 ```
+Speller filename: res/tr.txt
+Alphabet filename: res/alfabe.txt
+Locale: tr
+
 Search: *asd*
 A total of 7 matches found.
 dasdaracık
@@ -52,17 +56,10 @@ tasdikname
 tasdiksiz
 
 Search: t?k
-A total of 4 matches found.
+A total of 5 matches found.
 tak
 tek
+tık
 tik
 tok
-
-Search: t??k
-A total of 5 matches found.
-talk
-tank
-terk
-tık
-trok
 ```

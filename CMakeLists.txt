@@ -18,4 +18,7 @@ add_executable(speller_regex "src/regex_main.cpp")
 target_link_libraries(speller_regex speller_utility_library)
 
 add_executable(speller_search "src/search_main.cpp")
-target_link_libraries(speller_search speller_utility_library)
+target_link_libraries(speller_search
+    speller_library
+    speller_utility_library
+)
