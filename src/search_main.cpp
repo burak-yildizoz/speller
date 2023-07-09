@@ -53,6 +53,9 @@ try {
         std::string search_str;
         std::cin >> search_str;
 
+        // Convert to lowercase
+        search_str = speller::Word(search_str, locale_name).tolower();
+
         // Create regex from search string
         static const std::regex asterisk_rgx(R"(\*)");
         static const std::regex question_rgx(R"(\?)");

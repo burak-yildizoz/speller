@@ -99,7 +99,7 @@ Word Word::tolower() const
         Letter lower_letter = alphabet.tolower(letter);
         lower_str += lower_letter.string();
     }
-    return Word(lower_str);
+    return Word(lower_str, locale_name);
 }
 
 Word Word::toupper() const
@@ -118,7 +118,7 @@ Word Word::toupper() const
         Letter upper_letter = alphabet.toupper(letter);
         upper_str += upper_letter.string();
     }
-    return Word(upper_str);
+    return Word(upper_str, locale_name);
 }
 
 } // namespace speller
