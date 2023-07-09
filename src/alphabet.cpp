@@ -175,6 +175,20 @@ std::string Alphabet::get_letter_regex_str() const
     return get_regex_group_str(get_all_letters());
 }
 
+Letter Alphabet::get_letter_from_hash(size_t hash) const&
+{
+    using const_iterator = std::map<size_t, std::string>::const_iterator;
+    const_iterator it = lowercase_hash_map.find(hash);
+    if (it != lowercase_hash_map.end()) {
+        return it->second;
+    }
+    it = uppercase_hash_map.find(hash);
+    if (it != uppercase_hash_map.end()) {
+        return it->second;
+    }
+    throw std::invalid_argument("Hash not found in the alphabet");
+}
+
 Alphabet alphabet_from_file(const std::string& filename)
 {
     if (!std::filesystem::exists(filename)) {

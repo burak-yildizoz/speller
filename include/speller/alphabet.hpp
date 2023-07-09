@@ -46,6 +46,9 @@ public:
     /// Similar to "([a-zA-Z])"
     std::string get_letter_regex_str() const;
 
+    /// @warning Throws if no such letter exists in the alphabet
+    Letter get_letter_from_hash(size_t hash) const&;
+
 private:
     std::map<size_t, std::string> lowercase_hash_map;
     std::map<size_t, std::string> uppercase_hash_map;
