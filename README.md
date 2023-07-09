@@ -36,7 +36,7 @@ The following characters are specially treated.
 - `?`
 
   Match exactly one character.
-  <br>Note that Unicode characters may require multiple `?` input.
+  <br>Note that an alphabet file must be provided in order for Unicode characters to be treated correctly.
 
 Example usage:
 
@@ -62,4 +62,38 @@ tek
 tık
 tik
 tok
+```
+
+## speller_search_any
+
+Find words that contain given letter set.
+
+The following character is specially treated.
+
+- `?`
+
+  Wildcard for one character.
+  <br>Note that an alphabet file must be provided in order for Unicode characters to be treated correctly.
+
+```
+Speller filename: res/tr.txt
+Alphabet filename: res/alfabe.txt
+Locale: tr
+
+Search: eiityz???
+A total of 8 matches found.
+eziyetsiz       esz
+meziyetli       eml
+riayetsiz       asr
+seyitgazi       gas
+zeytinlik       lnk
+zeytinsiz       nsz
+zilyetlik       llk
+ziyaretçi       çar
+
+Search: aaksuv???
+A total of 3 matches found.
+savrulmak       mlr
+savurtmak       mtr
+uçaksavar       çar
 ```

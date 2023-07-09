@@ -16,6 +16,8 @@ void enable_exceptions(std::istream& is);
 
 std::string file_to_string(const std::filesystem::path& filename);
 
+std::vector<std::string> file_to_vector(const std::filesystem::path& filename);
+
 std::vector<std::string> get_all_matches(const std::string& str, const std::regex& rgx);
 
 } // namespace util
@@ -54,6 +56,19 @@ inline std::string file_to_string(const std::filesystem::path& filename)
     std::stringstream ss;
     ss << ifs.rdbuf();
     return ss.str();
+}
+
+inline std::vector<std::string> file_to_vector(const std::filesystem::path& filename)
+{
+    if (!std::filesystem::exists(filename)) {
+        throw std::runtime_error("File does not exist: " + filename.string());
+    }
+    std::ifstream ifs(filename);
+    std::vector<std::string> results;
+    for (std::string line; std::getline(ifs, line);) {
+        results.emplace_back(std::move(line));
+    }
+    return results;
 }
 
 inline std::vector<std::string> get_all_matches(const std::string& str, const std::regex& rgx)

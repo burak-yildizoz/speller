@@ -22,3 +22,9 @@ target_link_libraries(speller_search
     speller_library
     speller_utility_library
 )
+
+add_executable(speller_search_any "src/search_any_main.cpp")
+target_link_libraries(speller_search_any
+    speller_library
+    speller_utility_library
+)
